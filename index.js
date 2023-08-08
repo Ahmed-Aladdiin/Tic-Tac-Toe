@@ -160,7 +160,10 @@ window.addEventListener('DOMContentLoaded', () => {
         // TODO : make sure that you add 'hide' class to the announcer-text element
         announcerText.classList.add('hide');
         // TODO : make sure that you change the currentPlayer variable to X
+        currentPlayerText.innerHTML = 'X';
         currentPlayer = 'X';
+        currentPlayerText.classList.remove('playerO');
+        currentPlayerText.classList.add('playerX');
         // TODO : make sure that you loop over the tile elements and remove the text from each tile 
         tiles.forEach(tile => {
             tile.innerHTML = '';
@@ -168,12 +171,13 @@ window.addEventListener('DOMContentLoaded', () => {
             tile.classList.remove('playerO');
         });
         // and remove playerX and playerO classes from each tile
+        isGameActive = true;
     }
 
     // TODO : make sure that you loop over the tiles and add a click event listener to each tile
     // the event listener should call the userAction function and pass the tile and the index of the tile as arguments
     tiles.forEach( (tile, index) => {
-        tile.addEventListener('click', userAction);
+        tile.addEventListener('click', () => userAction(tile, index));
     });
 
     // TODO : make sure that you add a click event listener to the resetButton element
