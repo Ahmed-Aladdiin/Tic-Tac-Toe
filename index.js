@@ -96,16 +96,15 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-    if (isFinished) {
+        if (isFinished) {
             announce(currentPlayer === 'X' ? PLAYERX_WON : PLAYERO_WON);
             isGameActive = false;
             return;
         }
 
-    // if the board is full and there is no winner(isFinished is false) then the game is a tie
-    if (!board.includes(''))
-        announce(TIE); 
-
+        // if the board is full and there is no winner(isFinished is false) then the game is a tie
+        if (!board.includes(''))
+            announce(TIE); 
     }
 
 
@@ -121,11 +120,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // TODO : update the current player class (change playerX to playerO or vice versa) from the current-player-text element 
         // to the next player by changing the text of the element 
-        
         // TODO : make sure that you change the currentPlayer variable to the next player by changing the value of the variable 
-
+        
         // TODO : change the innerHTML of the current-player-text element to currentPlayer variable
-
+        if(currentPlayer ==='X')
+        {
+            currentPlayerText.innerHTML = 'O';
+            currentPlayer = 'O';
+            currentPlayerText.classList.remove('playerX');
+            currentPlayerText.classList.add('playerO');
+        }
+        else
+        {
+            currentPlayerText.innerHTML = 'X';
+            currentPlayer = 'X';
+            currentPlayerText.classList.remove('playerO');
+            currentPlayerText.classList.add('playerX');
+        }
     }
 
     // this function will be called whenever the user clicks on a tile
