@@ -56,9 +56,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // TODO : make sure that you display the correct message for each case by making the innerHTML of the announcer-text element
         // For one of these 'Player <span class="playerO">O</span> Won' or 'Player <span class="playerX">X</span> Won' or 'Tie' 
-
+        if(type === PLAYERO_WON) {
+            announcerText.innerHTML = 'Player <span class="playerO">O</span> Won';
+        }
+        else if ( type === PLAYERX_WON) {
+            announcerText.innerHTML = 'Player <span class="playerX">X</span> Won';
+        }
+        else {
+            announcerText.innerHTML = 'Tie';
+        }
 
         // TODO : make sure that you remove the 'hide' class from the announcer-text element so that the message is displayed
+        announcerText.classList.remove('hide');
     };
 
     function handleResultValidation() {
