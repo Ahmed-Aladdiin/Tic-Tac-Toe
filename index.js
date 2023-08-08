@@ -1,7 +1,21 @@
 window.addEventListener('DOMContentLoaded', () => {
     
+    {
+        let html = ``;
+        for (let i = 0; i < 8; i++) {
+            html += `\n<div class="tile"></div>`
+        }
+        html += `\n<div class="tile"></div>\n`;
+
+        document.querySelector('.tiles-container').innerHTML = html;
+    }
+
     // TODO : get each HTML element that you will need to manipulate ( 
     //     tiles(make sure that you get all tiles and store them in array), current-player-text, announcer-text, resetButton
+    const tiles = document.querySelectorAll('.tile');
+    const currentPlayerText = document.querySelector('.current-player-text');
+    const announcerText = document.querySelector('.announcer-text');
+    const resetButton = document.querySelector('#reset');
     // )
 
 
