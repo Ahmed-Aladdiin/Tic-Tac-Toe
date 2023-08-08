@@ -7,14 +7,16 @@
 body {
     background-color: #12181B;
     height: 100%;
-    padding-top: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
     color: white;
     text-align: center;
     font-size: 40px;
-    margin-top: 10%;
 }
 
 .wrapper {
@@ -26,12 +28,16 @@ body {
 
 .hide {
     /* TODO : make it wrapper none */
+    display: none;
 }
 
 .tiles-container {
     /* TODO : make it in the center of the page */
+    /* I did this by making the body element flex */
     /* TODO : make it grid and make sure that the column and row contain 3 items and each item is 1fr */
-    wrapper: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     max-width: 300px;
 }
 
@@ -43,14 +49,30 @@ body {
     cursor: pointer;
     text-align: center;
     line-height: 100px;
+    border: 1px solid white;
+}
+
+.tile:nth-child(1), .tile:nth-child(2) , .tile:nth-child(3) {
+    border-top: none;
+}
+.tile:nth-child(7), .tile:nth-child(8) , .tile:nth-child(9) {
+    border-bottom: none;
+}
+.tile:nth-child(1), .tile:nth-child(4) , .tile:nth-child(7) {
+    border-left: none;
+}
+.tile:nth-child(3), .tile:nth-child(6) , .tile:nth-child(9) {
+    border-right: none;
 }
 
 .playerX {
     /* TODO : choose the color you want for player X */
+    color: #FF3860;
 }
 
 .playerO {
     /* TODO : choose the color you want for player O */
+    color: orange;
 }
 
 .reset-div {
