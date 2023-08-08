@@ -63,22 +63,24 @@ body {
     line-height: 100px;
     
     /* the glossy styling */
-    background: rgba(255, 255, 255, 0.246);
+    background: rgba(255, 255, 255, 0.122);
     border-radius: 16px;
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(1.3px);
--webkit-backdrop-filter: blur(1.3px);
+    -webkit-backdrop-filter: blur(1.3px);
     border: 1px solid rgb(255, 255, 255);
 }
 
 .playerX {
     /* TODO : choose the color you want for player X */
     color: var(--x-player);
+    text-shadow: 0 0 5px var(--x-player);
 }
 
 .playerO {
     /* TODO : choose the color you want for player O */
     color: var(--y-player);
+    text-shadow: 0 0 5px var(--y-player);
 }
 
 
@@ -90,10 +92,15 @@ body {
 #reset {
     background-color: #FF3860;
     color: white;
-    padding: 8px;
+    padding: 8px 12px;
     border-radius: 8px;
     border: none;
     font-size: 20px;
-    margin-left: 1em;
     cursor: pointer;
+    box-shadow: 0 0 5px var(--y-player);
+    transition: all 0.5s;
+}
+
+#reset:hover {
+    transform: scale(1.2) ;
 }
