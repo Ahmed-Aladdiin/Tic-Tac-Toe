@@ -154,15 +154,29 @@ window.addEventListener('DOMContentLoaded', () => {
     // this function will be called when the user clicks on the reset button
     const resetBoard = () => {
         // TODO : make sure that you reset the board representation to empty strings
+        board.forEach((element, index) => {
+            board[index] = '';
+        })
         // TODO : make sure that you add 'hide' class to the announcer-text element
+        announcerText.classList.add('hide');
         // TODO : make sure that you change the currentPlayer variable to X
+        currentPlayer = 'X';
         // TODO : make sure that you loop over the tile elements and remove the text from each tile 
+        tiles.forEach(tile => {
+            tile.innerHTML = '';
+            tile.classList.remove('playerX');
+            tile.classList.remove('playerO');
+        });
         // and remove playerX and playerO classes from each tile
     }
 
     // TODO : make sure that you loop over the tiles and add a click event listener to each tile
     // the event listener should call the userAction function and pass the tile and the index of the tile as arguments
+    tiles.forEach( (tile, index) => {
+        tile.addEventListener('click', userAction);
+    });
 
     // TODO : make sure that you add a click event listener to the resetButton element
     // the event listener should call the resetBoard function
+    resetButton.addEventListener('click', resetBoard);
 });
